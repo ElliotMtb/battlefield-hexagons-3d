@@ -49,7 +49,7 @@ class App extends Component {
       // Load a glTF resource
       gltfLoader.load(
           // resource URL
-          'panzer-4-h.gltf',
+          'panzer-4-h.json',
           // called when the resource is loaded
           function ( gltf ) {
 

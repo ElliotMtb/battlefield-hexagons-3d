@@ -1,5 +1,5 @@
 ## Description
-A hexagon-based WW II themed board game built with React and ThreeJS.
+An app that uses React, ThreeJS (w/ underlying WebGL), and loaded 3D models as the building blocks to test the concepts needed to build a 3D hexagon-based board game as a webapp.
 
 ## Project Objectives
 - Learn the basics of creating a WebGL-based 3D scene with models, shapes, and lighting

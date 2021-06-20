@@ -18,6 +18,14 @@ An app that uses React, ThreeJS (w/ underlying WebGL), and loaded 3D models as t
  - How to utilize free 3D models from BlendSwap
      - Use Blender to export model in GLTF format
  - How to render a ThreeJS scene inside a React app
+ - How to host on AWS using Amplify
+
+## Note on AWS Amplify serving GLTF model
+As a quick experiment, I hosted this app on AWS using the Amplify service, however at first the 3D GLTF models wouldn't render.
+The fix is to add a custom header specification that servers .gltf as JSON like this:
+
+![image](https://user-images.githubusercontent.com/2363880/122688836-c8b0b900-d1db-11eb-9efd-29c74e470647.png)
+
 
 ## Credits
 Hemisphere lighting based on threejs example https://threejs.org/examples/webgl_lights_hemisphere.html

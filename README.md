@@ -1,3 +1,14 @@
+## Quickstart
+Assuming NodeJS is installed...
+Clone this repo
+Open the project from a command line or terminal
+
+Type:
+
+npm start
+
+It should launch the app in your default browser at localhost:3000. The tank models may take some time to load.
+
 ## Description
 An app that uses React, ThreeJS (w/ underlying WebGL), and loaded 3D models as the building blocks to test the concepts needed to build a 3D hexagon-based board game as a webapp.
 

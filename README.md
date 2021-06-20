@@ -5,6 +5,7 @@ Assuming NodeJS is installed...
 2. Open the project from a command line or terminal
 3. Type:
 
+npm install
 npm start
 
 It should launch the app in your default browser at localhost:3000. The tank models may take some time to load.

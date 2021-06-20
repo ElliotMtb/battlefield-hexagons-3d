@@ -24,7 +24,7 @@ An app that uses React, ThreeJS (w/ underlying WebGL), and loaded 3D models as t
 As a quick experiment, I hosted this app on AWS using the Amplify service, however at first the 3D GLTF models wouldn't render.
 The fix is to add a custom header specification that servers .gltf as JSON like this:
 
-![image](https://user-images.githubusercontent.com/2363880/122688836-c8b0b900-d1db-11eb-9efd-29c74e470647.png)
+<img src="https://user-images.githubusercontent.com/2363880/122688836-c8b0b900-d1db-11eb-9efd-29c74e470647.png" height="350" />
 
 
 ## Credits

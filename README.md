@@ -1,9 +1,9 @@
 ## Quickstart
 Assuming NodeJS is installed...
-Clone this repo
-Open the project from a command line or terminal
 
-Type:
+1. Clone this repo
+2. Open the project from a command line or terminal
+3. Type:
 
 npm start
 

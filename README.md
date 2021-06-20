@@ -1,4 +1,4 @@
-## Overview
+## Description
 A hexagon-based WW II themed board game built with React and ThreeJS.
 
 ## Project Objectives
@@ -7,6 +7,17 @@ A hexagon-based WW II themed board game built with React and ThreeJS.
 - Build the app as a React app (starting from create-react-app)
 - (long-term) Port my existing vanilla JS game logic and build out the game
 
+## Concepts Learned
+- How to set up a ThreeJS/WebGL scene with
+    - Perspective camera (ThreeJS PerspectiveCamera)
+    - Orbit controls for zooming, panning, and looking around (orbit-controls-es6)
+    - Hemisphere light (ThreeJS HemisphereLight)
+    - Directional light (ThreeJS DirectionalLight)
+    - Hexagonal meshes with an image background and textured material (ThreeJS MeshPhongMaterial, ThreeJS Group)
+    - GLTF (i.e. JSON-based) 3D model(s)
+ - How to utilize free 3D models from BlendSwap
+     - Use Blender to export model in GLTF format
+ - How to render a ThreeJS scene inside a React app
 
 ## Credits
 Hemisphere lighting based on threejs example https://threejs.org/examples/webgl_lights_hemisphere.html

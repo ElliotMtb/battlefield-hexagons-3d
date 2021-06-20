@@ -11,5 +11,5 @@ Hemisphere lighting based on threejs example https://threejs.org/examples/webgl_
 3D tank model from blendswap https://blendswap.com/blend/24082 (credit goes to TonyWony)
 
 ## Preview
-![demo_battle_hex](https://user-images.githubusercontent.com/2363880/122687324-0a893180-d1d3-11eb-9ccc-f025f1e6b740.gif)
+![demo_battle_hex](https://user-images.githubusercontent.com/2363880/122687324-0a893180-d1d3-11eb-9ccc-f025f1e6b740.gif =250x250)
 

@@ -20,7 +20,7 @@ An app that uses React, ThreeJS (w/ underlying WebGL), and loaded 3D models as t
  - How to render a ThreeJS scene inside a React app
  - How to host on AWS using Amplify
 
-## Note on AWS Amplify serving GLTF model
+### Note on AWS Amplify serving GLTF model
 As a quick experiment, I hosted this app on AWS using the Amplify service, however at first the 3D GLTF models wouldn't render.
 The fix is to add a custom header specification that servers .gltf as JSON like this:
 

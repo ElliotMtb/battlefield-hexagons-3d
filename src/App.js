@@ -11,6 +11,7 @@ import BrickImage from './brick.png';
 import StoneImage from './stone.png';
 import ForestImage from './forest.png';
 import WheatImage from './wheat.png';
+import { buildHexGrid } from './HexGrid';
 
 class App extends Component {
   componentDidMount() {
@@ -103,108 +104,7 @@ class App extends Component {
           }
       );
 
-      // 
-      const radius = 7;
-      const geometry = new THREE.CircleGeometry(radius, 6);
-      
-      const distCenterToEdge = (1/2) * (radius) * Math.sqrt(3); // 30-60-90 triangle...side adjacent to 30
-      const edgeLength = 2 * (1/2 * radius); // 30-60-90 triangle...hypotenuse is the radius, so 1/2 hypotenuse is opposite 30...and it's twice that length
-
-      // Not affected by light
-      // const material = new THREE.MeshBasicMaterial({color: 0x44aa88});
-      const material = new THREE.MeshPhongMaterial({color: 0x44aa88});
-
-      const loader = new THREE.TextureLoader();
-      const materialGrass = new THREE.MeshPhongMaterial({map: loader.load(GrassImage)});
-      
-      const hex = new THREE.Mesh(geometry, materialGrass);
-      hex.receiveShadow = true;
-      hex.rotation.z = Math.PI/6;
-      
-      // Edges
-      const edges = new THREE.EdgesGeometry(geometry);
-      const meshEdges = new THREE.LineSegments(edges, new THREE.LineBasicMaterial({color:0x000000}))
-      meshEdges.rotation.z = Math.PI/6;
-
-      const hex2 = new THREE.Mesh(geometry, materialGrass);
-      hex2.rotation.z = Math.PI/6;
-      hex2.position.x = 2 * distCenterToEdge;
-
-      const meshEdges2 = new THREE.LineSegments(edges, new THREE.LineBasicMaterial({color:0x000000}))
-      meshEdges2.rotation.z = Math.PI/6;
-      meshEdges2.position.x = 2 * distCenterToEdge;
-
-      const materialForest = new THREE.MeshPhongMaterial({map: loader.load(ForestImage)});
-      const hex3 = new THREE.Mesh(geometry, materialForest);
-      hex3.rotation.z = Math.PI/6;
-      hex3.position.x = distCenterToEdge;
-      hex3.position.y = 1.5 * edgeLength;
-
-      const meshEdges3 = new THREE.LineSegments(edges, new THREE.LineBasicMaterial({color:0x000000}))
-      meshEdges3.rotation.z = Math.PI/6;
-      meshEdges3.position.x = distCenterToEdge;
-      meshEdges3.position.y = 1.5 * edgeLength;
-
-      const materialWheat = new THREE.MeshPhongMaterial({map: loader.load(WheatImage)});
-      const hex4 = new THREE.Mesh(geometry, materialGrass);
-
-      hex4.rotation.z = Math.PI/6;
-      hex4.position.x = -1 * distCenterToEdge;
-      hex4.position.y = 1.5 * edgeLength;
-
-      const meshEdges4 = new THREE.LineSegments(edges, new THREE.LineBasicMaterial({color:0x000000}))
-      meshEdges4.rotation.z = Math.PI/6;
-      meshEdges4.position.x = -1 * distCenterToEdge;
-      meshEdges4.position.y = 1.5 * edgeLength;
-
-      const materialBrick = new THREE.MeshPhongMaterial({map: loader.load(BrickImage)});
-      const hex5 = new THREE.Mesh(geometry, materialForest);
-      hex5.rotation.z = Math.PI/6;
-      hex5.position.x = -2 * distCenterToEdge;
-
-      const meshEdges5 = new THREE.LineSegments(edges, new THREE.LineBasicMaterial({color:0x000000}))
-      meshEdges5.rotation.z = Math.PI/6;
-      meshEdges5.position.x = -2 * distCenterToEdge;
-
-      const materialStone = new THREE.MeshPhongMaterial({map: loader.load(StoneImage)});
-      const hex6 = new THREE.Mesh(geometry, materialStone);
-      hex6.rotation.z = Math.PI/6;
-      hex6.position.x = -1 * distCenterToEdge;
-      hex6.position.y = -1.5 * edgeLength;
-
-      const meshEdges6 = new THREE.LineSegments(edges, new THREE.LineBasicMaterial({color:0x000000}))
-      meshEdges6.rotation.z = Math.PI/6;
-      meshEdges6.position.x = -1 * distCenterToEdge;
-      meshEdges6.position.y = -1.5 * edgeLength;
-
-      const hex7 = new THREE.Mesh(geometry, materialForest);
-      hex7.rotation.z = Math.PI/6;
-      hex7.position.x = distCenterToEdge;
-      hex7.position.y = -1.5 * edgeLength;
-
-      const meshEdges7 = new THREE.LineSegments(edges, new THREE.LineBasicMaterial({color:0x000000}))
-      meshEdges7.rotation.z = Math.PI/6;
-      meshEdges7.position.x = distCenterToEdge;
-      meshEdges7.position.y = -1.5 * edgeLength;
-
-      const group = new THREE.Group();
-      group.add(hex);
-      // group.add(meshEdges);
-      group.add(hex2);
-      // group.add(meshEdges2);
-      group.add(hex3);
-      // group.add(meshEdges3);
-      group.add(hex4);
-      // group.add(meshEdges4);
-      group.add(hex5);
-      // group.add(meshEdges5);
-      group.add(hex6);
-      // group.add(meshEdges6);
-      group.add(hex7);
-      // group.add(meshEdges7);
-
-      group.rotation.x = -1 * Math.PI / 2;
-
+      const group = buildHexGrid();
       scene.add(group);
 
       // Fog etc.

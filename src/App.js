@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
 import * as THREE from "three";
-import OrbitControls from 'orbit-controls-es6';
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 import { DRACOLoader } from 'three/examples/jsm/loaders/DRACOLoader.js';
@@ -105,7 +105,7 @@ class App extends Component {
 
       // 
       const radius = 7;
-      const geometry = new THREE.CircleBufferGeometry(radius, 6);
+      const geometry = new THREE.CircleGeometry(radius, 6);
       
       const distCenterToEdge = (1/2) * (radius) * Math.sqrt(3); // 30-60-90 triangle...side adjacent to 30
       const edgeLength = 2 * (1/2 * radius); // 30-60-90 triangle...hypotenuse is the radius, so 1/2 hypotenuse is opposite 30...and it's twice that length
@@ -257,7 +257,7 @@ class App extends Component {
 
       // GROUND
 
-      const groundGeo = new THREE.PlaneBufferGeometry( 10000, 10000 );
+      const groundGeo = new THREE.PlaneGeometry( 10000, 10000 );
       const groundMat = new THREE.MeshLambertMaterial( { color: 0xffffff } );
       groundMat.color.setHSL( 0.095, 1, 0.75 );
 
@@ -282,7 +282,7 @@ class App extends Component {
 
       scene.fog.color.copy( uniforms[ "bottomColor" ].value );
 
-      const skyGeo = new THREE.SphereBufferGeometry( 4000, 32, 15 );
+      const skyGeo = new THREE.SphereGeometry( 4000, 32, 15 );
       const skyMat = new THREE.ShaderMaterial( {
         uniforms: uniforms,
         vertexShader: vertexShader,

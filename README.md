@@ -6,9 +6,13 @@ Assuming NodeJS is installed...
 3. Type:
 
 npm install
+npm build
 npm start
 
 It should launch the app in your default browser at localhost:3000. The tank models may take some time to load.
+
+## Recent build/run 2024
+As of Dec. 2024, builds and runs successfully on Node v22.12.0 on Microsoft Edge for Linux (Ubuntu)
 
 ## Description
 An app that uses React, ThreeJS (w/ underlying WebGL), and loaded 3D models as the building blocks to test the concepts needed to build a 3D hexagon-based board game as a webapp.

@@ -1,16 +1,19 @@
 import * as THREE from "three";
-import GrassImage from './grass.png';
-import BrickImage from './brick.png';
-import StoneImage from './stone.png';
-import ForestImage from './forest.png';
-import WheatImage from './wheat.png';
 
-// // Not affected by light
-// // const material = new THREE.MeshBasicMaterial({color: 0x44aa88});
-// const material = new THREE.MeshPhongMaterial({color: 0x44aa88});
+/**
+ * MIGRATION NOTE: Updated texture paths for Next.js
+ * - Changed from relative imports to public folder paths
+ * - Textures now served from /images/ directory
+ */
 
-// const loader = new THREE.TextureLoader();
-// const materialGrass = new THREE.MeshPhongMaterial({map: loader.load(GrassImage)});
+// Texture paths for Next.js public folder
+const texturePaths = {
+  grass: '/images/grass.png',
+  brick: '/images/brick.png',
+  stone: '/images/stone.png',
+  forest: '/images/forest.png',
+  wheat: '/images/wheat.png'
+};
 
 const radius = 7;
 
@@ -32,11 +35,11 @@ function createHex(material, position, rotationZ = Math.PI / 6) {
 export function buildHexGrid() {
   const loader = new THREE.TextureLoader();
   const materials = {
-    grass: new THREE.MeshPhongMaterial({ map: loader.load(GrassImage) }),
-    forest: new THREE.MeshPhongMaterial({ map: loader.load(ForestImage) }),
-    wheat: new THREE.MeshPhongMaterial({ map: loader.load(WheatImage) }),
-    brick: new THREE.MeshPhongMaterial({ map: loader.load(BrickImage) }),
-    stone: new THREE.MeshPhongMaterial({ map: loader.load(StoneImage) }),
+    grass: new THREE.MeshPhongMaterial({ map: loader.load(texturePaths.grass) }),
+    forest: new THREE.MeshPhongMaterial({ map: loader.load(texturePaths.forest) }),
+    wheat: new THREE.MeshPhongMaterial({ map: loader.load(texturePaths.wheat) }),
+    brick: new THREE.MeshPhongMaterial({ map: loader.load(texturePaths.brick) }),
+    stone: new THREE.MeshPhongMaterial({ map: loader.load(texturePaths.stone) }),
   };
 
   const distCenterToEdge = (1 / 2) * radius * Math.sqrt(3); // 30-60-90 triangle...side adjacent to 30

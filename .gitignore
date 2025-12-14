@@ -5,11 +5,12 @@
 /.pnp
 .pnp.js
 
+# Next.js build output
+.next/
+.out/
+
 # testing
 /coverage
-
-# production
-/build
 
 # misc
 .DS_Store
@@ -21,3 +22,20 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# Next.js specific ignores
+.next/cache/
+.next/static/
+.next/standalone/
+.next/server/
+.next/serverless/
+.next/trace
+.next/BUILD_ID
+.next/prerender-manifest.json
+.next/react-loadable-manifest.json
+.next/routes-manifest.json
+.next/serverless-manifest.json
+.next/static-manifest.json
+.next/required-server-files.json
+.next/server/pages-manifest.json
+.next/serverless/pages-manifest.json

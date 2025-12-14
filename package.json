@@ -3,26 +3,22 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@testing-library/jest-dom": "^6.6.3",
-    "@testing-library/react": "^16.1.0",
-    "@testing-library/user-event": "^14.5.2",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "react-scripts": "5.0.1",
     "react-three-fiber": "^6.0.13",
     "three": "^0.171.0",
-    "web-vitals": "^4.2.4"
+    "next": "^14.2.3",
+    "@next/font": "^14.2.3"
   },
   "scripts": {
-    "start": "NODE_OPTIONS=--openssl-legacy-provider react-scripts start",
-    "build": "NODE_OPTIONS=--openssl-legacy-provider react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
   },
   "eslintConfig": {
     "extends": [
-      "react-app",
-      "react-app/jest"
+      "next/core-web-vitals"
     ]
   },
   "browserslist": {
